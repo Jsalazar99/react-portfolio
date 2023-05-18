@@ -1,7 +1,11 @@
 import './App.css';
+import './css/reset.css'
+import './css/style.css'
+
 import Header from './Components/Header';
 import Aside from './Components/Aside';
-import Project from './Components/Project';
+import Projects from './Components/Projects';
+import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
 function App() {
@@ -11,9 +15,8 @@ function App() {
       <Aside />
       <main>
         <div id='featured'>
-          <Project />
+          <Projects />
         </div>
-        <Project />
       </main>
       <Footer />
     </div>

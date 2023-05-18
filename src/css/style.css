@@ -1,0 +1,205 @@
+:root {
+  /* declare CSS variables with `--` syntax */
+  --dark: #13293d;
+  --light: #fff;
+  --navlink-color: rgb(0, 76, 255);
+  --pad20: 20px;
+}
+html {
+  scroll-behavior: smooth;
+}
+header,
+footer {
+    width: 100%;
+    height: auto;
+    padding: var(--pad20);
+    color: #fff;
+    text-shadow: 1px 1px #333;
+}
+header {
+  background-image: linear-gradient( to bottom, #368727, transparent);
+  padding-bottom: 5em;
+  display: flex;
+  justify-content: space-around;
+}
+div.intro {
+    display: block;
+    max-width: 600px;
+}
+div.intro p {
+  padding: var(--pad20) 0;
+  margin: auto;
+  text-align: center;
+}
+nav {
+    width: 35%;
+    /* float: left; */
+    justify-content: flex-end;
+    max-width: 600px;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    text-shadow: 1px 1px 5px #999;
+}
+a {
+  margin: 5px;
+  display: block;
+  color: var(--navlink-color);
+}
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+a:focus {
+  color: purple;
+}
+h1,
+h2 {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 4em;
+}
+img {
+    display: block;
+    /* height: 50px;
+    width: 50px; */
+    margin: auto;
+}
+img.bio {
+    width: 35%;
+    max-width: 300px;
+    border-radius: 0 0 25%;
+    max-height: 350px;
+    margin-left: 0;
+}
+aside {
+    float: left;
+    margin-right: 15px;
+}
+aside ul {
+  max-width: 215px;
+  padding-left: var(--pad20);
+}
+aside a {
+  margin: 15px 0;
+}
+/* flexbox code is going in here */ 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align-items: flex-start; */
+    border-left: 1px solid #333;
+    margin-bottom: 2em;
+}
+section {
+    color: #000;
+    padding:  var(--pad20) 0;
+}
+ul {
+    padding-left: 40px;
+    font-size: 20px;
+}
+p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+.card {
+    width: 45%;
+    margin-bottom: 40px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px #888888;
+}
+.card:hover {
+    box-shadow: 0 0 5px;
+}
+.card img {
+  width: 100%;
+  max-height: 320px;
+}
+.card h4 {
+  font-size: 2em;
+  color: #666;
+  margin: 20px;
+  text-align: center; 
+}
+.card p {
+  margin: 25px;
+}
+a.button {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  max-width: 100px;
+  margin: auto;
+  color: #fff;
+  background-color: #368727;
+  border-radius: 6px;
+  outline: none;
+}
+a.button:hover {
+  /* color: #888888; */
+  box-shadow: 1px 1px 4px #666;
+}
+#featured {
+  width: 95%;
+}
+#featured img {
+  max-height: 400px;
+  max-width: 650px;
+}
+#featured p {
+  text-align: center;
+}
+#contact ul li {
+  list-style-type: disc;
+  margin: 5px;
+}
+#contact ul a {
+  margin: 0;
+}
+footer {
+     background-color:#368727; 
+}
+footer h4 {
+    font-size: 18px;
+}
+
+/* CSS media queries code goes at the bottom */
+  @media screen and (max-width: 992px) {
+    header {
+      flex-direction: column;
+    }
+    div.intro {
+      max-width: none;
+      margin: 1em;
+    }
+    nav {
+      width: 100%;
+      justify-content: space-around;
+      max-width: none;
+    }
+    aside {
+      float: none;
+    }  
+    .container  {
+      flex-direction: column;
+      border-left: none;
+    }
+    .card {
+      width: 95%;
+      margin: 1em auto;
+    }
+  }
+  
+  /* Large smartphones */
+  @media screen and (max-width: 768px) {
+    nav {
+       text-align: center;
+    }
+  }
