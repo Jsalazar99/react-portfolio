@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from './Nav';
-import imageHero from '../images/IMG_3011.jpeg'
+import Main from './Main';
 // import ReactDOM from 'react-dom/client';
 
-function Header() {
+export default function Header() {
+
+    const [currentPage, setCurrentPage] = useState('Home');
+    const handlePageChange = (page) => setCurrentPage(page);
+
     return (
+        <>
         <header className="header">
-            <img src={imageHero} alt="Jesus Salazar" className="bio" />
-            <div className="intro" id="home">
-                <h1>My Portfolio</h1>
-                <p>Portfolio website for the work of Jesus Salazar. </p>
-            </div>
-            <Nav />
+            <h1><a href="/">My Portfolio</a></h1>
+            <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
         </header>
+        <Main currentPage={currentPage} />
+        </>
     );
 }
-
-export default Header;

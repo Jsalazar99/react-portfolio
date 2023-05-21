@@ -10,73 +10,94 @@ html {
 }
 header,
 footer {
-    width: 100%;
-    height: auto;
-    padding: var(--pad20);
-    color: #fff;
-    text-shadow: 1px 1px #333;
+  width: 100%;
+  height: auto;
+  padding: var(--pad20);
+  color: #fff;
+  text-shadow: 1px 1px #333;
 }
 header {
-  background-image: linear-gradient( to bottom, #368727, transparent);
+  background-image: linear-gradient(to bottom, #368727, transparent);
   padding-bottom: 5em;
   display: flex;
   justify-content: space-around;
 }
-div.intro {
-    display: block;
-    max-width: 600px;
+.intro {
+  display: block;
+  max-width: 600px;
+  margin: 2em 5em;
 }
-div.intro p {
+.intro p {
   padding: var(--pad20) 0;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }
 nav {
-    width: 35%;
-    /* float: left; */
-    justify-content: flex-end;
-    max-width: 600px;
+  width: 35%;
+  /* float: left; */
+  justify-content: flex-end;
+  max-width: 600px;
 }
 nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-    text-shadow: 1px 1px 5px #999;
+  display: inline-block;
+  margin: 0 10px;
+  text-shadow: 1px 1px 5px #999;
 }
 a {
   margin: 5px;
   display: block;
+  text-decoration: none;
   color: var(--navlink-color);
 }
-a:hover {
-  color: orange;
+h1 a {
+  color: #fff;
+}
+h1 a:hover, h1 a:active {
   text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+nav ul {
+  padding-left: 0;
+}
+nav a {
+  padding: 10px;
 }
 a:focus {
   color: purple;
 }
+a:hover, a:active {
+  color: orange;
+  text-decoration: underline;
+}
+nav a:hover, nav a.active {
+  color: orange;
+  text-decoration: underline;
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+}
 h1,
 h2 {
-    text-align: center;
-    width: 100%;
-    display: block;
-    font-size: 4em;
+  text-align: center;
+  display: block;
+  font-size: 4em;
 }
 img {
-    display: block;
-    /* height: 50px;
+  display: block;
+  /* height: 50px;
     width: 50px; */
-    margin: auto;
+  margin: auto;
 }
-img.bio {
-    width: 35%;
-    max-width: 300px;
-    border-radius: 0 0 25%;
-    max-height: 350px;
-    margin-left: 0;
+.bio {
+  max-width: 300px;
+  border-radius: 10px;
+  max-height: 350px;
 }
 aside {
-    float: left;
-    margin-right: 15px;
+  /* float: left; */
+  margin-right: 15px;
+  width: 20%;
 }
 aside ul {
   max-width: 215px;
@@ -85,37 +106,44 @@ aside ul {
 aside a {
   margin: 15px 0;
 }
-/* flexbox code is going in here */ 
+/* flexbox code is going in here */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* align-items: flex-start; */
-    border-left: 1px solid #333;
-    margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+  align-items: flex-start;
+  border-left: 1px solid #333;
+  margin-bottom: 2em;
+  color: #333;
+}
+.projects {
+  display: flex;
+  flex-flow: row wrap;
 }
 section {
-    color: #000;
-    padding:  var(--pad20) 0;
+  color: #000;
+  padding: var(--pad20) 0;
 }
 ul {
-    padding-left: 40px;
-    font-size: 20px;
+  padding-left: 40px;
+  font-size: 20px;
+  text-align: left;
 }
 p {
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.25;
-  }
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.25;
+}
 .card {
-    width: 45%;
-    margin-bottom: 40px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    box-shadow: 5px 5px 2px #888888;
+  width: 50%;
+  max-width: 500px;
+  margin: 1em;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px #888888;
 }
 .card:hover {
-    box-shadow: 0 0 5px;
+  box-shadow: 0 0 5px;
 }
 .card img {
   width: 100%;
@@ -125,17 +153,18 @@ p {
   font-size: 2em;
   color: #666;
   margin: 20px;
-  text-align: center; 
+  text-align: center;
 }
 .card p {
   margin: 25px;
 }
-a.button {
+a.button,
+button.submit {
   display: block;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  max-width: 100px;
+  width: 50%;
   margin: auto;
   color: #fff;
   background-color: #368727;
@@ -156,50 +185,89 @@ a.button:hover {
 #featured p {
   text-align: center;
 }
-#contact ul li {
+.contact h2,
+.contact p,
+.contact ul {
+  margin: 1em;
+}
+.contact h2 {
+  text-align: left;
+  margin-left: 0.25em;
+  margin-top: 0;
+}
+.contact ul {
+  padding-left: 0.75em;
+}
+.contact ul li {
   list-style-type: disc;
   margin: 5px;
 }
-#contact ul a {
+.contact ul a {
   margin: 0;
 }
+form {
+  color: #8597a3;
+  position: relative;
+  background-color: #fafafe;
+  border-radius: 10px;
+  margin: 40px;
+  padding: 25px 20px 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+input {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 2px solid #eee;
+  font: inherit;
+  font-size: 14px;
+  line-height: 30px;
+  width: 100%;
+  margin: 1em auto;
+}
+.submit {
+  margin: 2em auto;
+}
 footer {
-     background-color:#368727; 
+  background-color: #368727;
 }
 footer h4 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 /* CSS media queries code goes at the bottom */
-  @media screen and (max-width: 992px) {
-    header {
-      flex-direction: column;
-    }
-    div.intro {
-      max-width: none;
-      margin: 1em;
-    }
-    nav {
-      width: 100%;
-      justify-content: space-around;
-      max-width: none;
-    }
-    aside {
-      float: none;
-    }  
-    .container  {
-      flex-direction: column;
-      border-left: none;
-    }
-    .card {
-      width: 95%;
-      margin: 1em auto;
-    }
+@media screen and (max-width: 992px) {
+  header {
+    flex-direction: column;
   }
-  
-  /* Large smartphones */
-  @media screen and (max-width: 768px) {
-    nav {
-       text-align: center;
-    }
+  div.intro {
+    max-width: none;
+    margin: 1em;
   }
+  nav {
+    width: 100%;
+    justify-content: space-around;
+    max-width: none;
+  }
+  aside {
+    float: none;
+  }
+  .container {
+    flex-direction: column;
+    border-left: none;
+  }
+  .card {
+    width: 95%;
+    margin: 1em auto;
+  }
+}
+
+/* Large smartphones */
+@media screen and (max-width: 768px) {
+  nav {
+    text-align: center;
+  }
+}

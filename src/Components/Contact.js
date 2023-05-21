@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { validateEmail } from './utils/helpers';
 
-const { name, email, message, errorMessage } = "";
+//const { name, email, message, errorMessage } = "";
+const { name, message } = "";
 
 function Contact() {
-  // Create state variables and set initial values to an empty string
-  /* const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); 
+
+  const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -14,46 +15,36 @@ function Contact() {
     const inputType = target.name;
     const inputValue = target.value;
 
-    // Based on the input type, we set the state of either email, username, and password
     if (inputType === 'email') {
-      setEmail(inputValue);
-    } else if (inputType === 'name') {
-      setName(inputValue);
-    } else {
-      setPassword(inputValue);
+      setEmail(inputValue); 
     }
-  }; */
-/*
+  };
+
   const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
+    // Preventing the default behavior of the form submit
     e.preventDefault();
 
-    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-    if (!validateEmail(email) || !name) {
-      setErrorMessage('Email or name is invalid');
-      // We want to exit out of this code block if something is wrong so that the user can correct it
-      return;
-      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
+    if (!validateEmail(email)) {
+      setErrorMessage('Email field is invalid');
+    
+      return;    
     }
-    /* if (!checkPassword(password)) {
-      setErrorMessage(
-        `Choose a more secure password for the account: ${userName}`
-      );
-      return; 
-    } 
-    alert(`Hello ${name}`);
-    // If everything goes according to plan, we want to clear out the input after a successful registration.
-    setName('');
-    //setPassword('');
+
     setEmail('');
-  }; */
+  };
 
   return (
-    <div>
-      <h2>Contact Me</h2>
-      <p>Use this form to send me a message to get in contact. </p>
-      <form className="form">
-      <input
+    <div className="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: JSalazar2010@Gmail.com</li>
+        <li>Phone: 720-515-1658</li>
+        <li><a href="https://www.linkedin.com/in/jsalazar2010/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/Jsalazar99" target="_blank" rel="noreferrer">Github</a></li>
+      </ul>
+      <p>Use the form below to send a message or to get in contact. </p>
+      <form className="form" onSubmit={e => e.preventDefault()}>
+        <input
           value={name}
           name="name"
           //onChange={handleInputChange}
@@ -63,7 +54,7 @@ function Contact() {
         <input
           value={email}
           name="email"
-          //onChange={handleInputChange}
+          onChange={handleInputChange}
           type="email"
           placeholder="email"
         />
@@ -72,9 +63,9 @@ function Contact() {
           name="message"
           //onChange={handleInputChange}
           type="textarea"
-          placeholder="Message here."
+          placeholder="Message here"
         />
-        <button type="button" /*onClick={handleFormSubmit}*/>Submit</button>
+        <button type="button" className="submit" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage && (
         <div>
