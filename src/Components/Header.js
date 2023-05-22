@@ -11,7 +11,7 @@ export default function Header() {
     return (
         <>
         <header className="header">
-            <h1><a href="/">My Portfolio</a></h1>
+            <h1><a href="/react-portfolio">My Portfolio</a></h1>
             <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
         </header>
         <Main currentPage={currentPage} isInsideHeader={true} />
