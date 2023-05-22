@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import { validateEmail } from './utils/helpers';
 
-//const { name, email, message, errorMessage } = "";
-const { name, message } = "";
-
 function Contact() {
 
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
+    const { name, value } = e.target;
+    //const inputType = target.name;
+    //const inputValue = target.value;
 
-    if (inputType === 'email') {
-      setEmail(inputValue); 
+    if (name === 'email') {
+      setEmail(value);
+      setErrorMessage(''); // reset error message display 
     }
+      else if (name === 'name') {
+        setName(value);
+      }
+      else if (name === 'message') {
+        setMessage(value);
+      }
   };
 
   const handleFormSubmit = (e) => {
@@ -31,6 +37,9 @@ function Contact() {
     }
 
     setEmail('');
+    setName('');
+    setMessage('');
+    setErrorMessage('');
   };
 
   return (
@@ -47,7 +56,7 @@ function Contact() {
         <input
           value={name}
           name="name"
-          //onChange={handleInputChange}
+          onChange={handleInputChange}
           type="text"
           placeholder="name"
         />
@@ -61,11 +70,11 @@ function Contact() {
         <input
           value={message}
           name="message"
-          //onChange={handleInputChange}
+          onChange={handleInputChange}
           type="textarea"
           placeholder="Message here"
         />
-        <button type="button" className="submit" onClick={handleFormSubmit}>Submit</button>
+        <button type="submit" className="submit" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage && (
         <div>

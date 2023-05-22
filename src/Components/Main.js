@@ -5,7 +5,7 @@ import Contact from './Contact';
 import Aside from './Aside';
 import Resume from './Resume';
 
-export default function Main({ currentPage }) {
+export default function Main({ currentPage, isInsideHeader }) {
 
     //const [currentPage, setCurrentPage] = useState('Home');
 
@@ -34,7 +34,7 @@ export default function Main({ currentPage }) {
 
   return (
     <div className='container'>
-        <Aside />
+        {isInsideHeader && <Aside />}
       {renderPage()}      
     </div>
   );

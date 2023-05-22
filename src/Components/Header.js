@@ -14,7 +14,7 @@ export default function Header() {
             <h1><a href="/">My Portfolio</a></h1>
             <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
         </header>
-        <Main currentPage={currentPage} />
+        <Main currentPage={currentPage} isInsideHeader={true} />
         </>
     );
 }

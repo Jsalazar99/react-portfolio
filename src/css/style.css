@@ -118,6 +118,7 @@ aside a {
 .projects {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 section {
   color: #000;
