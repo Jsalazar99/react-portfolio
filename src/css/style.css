@@ -112,7 +112,6 @@ aside a {
   flex-wrap: wrap;
   /* justify-content: space-evenly; */
   align-items: flex-start;
-  border-left: 1px solid #333;
   margin-bottom: 2em;
   color: #333;
 }
@@ -243,6 +242,9 @@ footer h4 {
   header {
     flex-direction: column;
   }
+  .bio {
+    margin: auto;
+  }
   div.intro {
     max-width: none;
     margin: 1em;
@@ -252,16 +254,36 @@ footer h4 {
     justify-content: space-around;
     max-width: none;
   }
+  nav ul {
+    text-align: center;
+  }
+  nav ul li {
+    margin: 0;
+    width: 24%;
+  }
   aside {
-    float: none;
+    width: auto;
+    margin: auto;
+  }
+  aside ul {
+    display: inline-block;
+    max-width: none;
+  }
+  aside ul li {
+    display: inline-block;
+    margin: 0.5em;
   }
   .container {
     flex-direction: column;
-    border-left: none;
+    align-items: center;
   }
   .card {
     width: 95%;
     margin: 1em auto;
+  }
+  form {
+    margin: 2em auto;
+    width: 90%;
   }
 }
 
