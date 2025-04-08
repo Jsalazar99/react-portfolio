@@ -7,10 +7,10 @@ function About() {
     return (
         <>
             <div>
-                <img src={imageHero} alt="Jesus Salazar" className="bio" />
+                <img src={imageHero} alt="Jess Salazar" className="bio" />
             </div>
             <div className="intro" id="home">
-                <p>Portfolio website for the work of Jesus Salazar. </p>
+                <p>Portfolio website for the work of Jess Salazar. </p>
                 <p>A Front-End Developer with over 10 years knowledge of corporate web development experience.</p>
             </div>
 

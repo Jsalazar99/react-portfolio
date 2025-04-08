@@ -6,7 +6,7 @@ export default function Resume() {
         <div>
             <h2>Resume</h2>
             <p>
-                <a href='#'>Resume PDF</a>
+                <a href='#'>Resume PDF</a> (update in progress)
             </p>
         </div>
     );
