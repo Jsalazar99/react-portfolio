@@ -51,7 +51,7 @@ function Contact() {
         <li><a href="https://www.linkedin.com/in/jsalazar2010/" target="_blank" rel="noreferrer">LinkedIn</a></li>
         <li><a href="https://github.com/Jsalazar99" target="_blank" rel="noreferrer">Github</a></li>
       </ul>
-      <p>Use the form below to send a message or to get in contact. </p>
+      <p>Use the form below to send a message or to get in contact. (updated form in progress)</p>
       <form className="form" onSubmit={e => e.preventDefault()}>
         <input
           value={name}

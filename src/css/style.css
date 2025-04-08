@@ -24,8 +24,8 @@ header {
 }
 .intro {
   display: block;
-  max-width: 600px;
-  margin: 2em 5em;
+  width: 45%;
+  margin: 2em 2em 2em 1em;
 }
 .intro p {
   padding: var(--pad20) 0;
@@ -33,7 +33,7 @@ header {
   text-align: left;
 }
 nav {
-  width: 35%;
+  width: 45%;
   /* float: left; */
   justify-content: flex-end;
   max-width: 600px;
